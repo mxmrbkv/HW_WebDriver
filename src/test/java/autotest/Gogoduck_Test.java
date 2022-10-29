@@ -24,9 +24,9 @@ public class Gogoduck_Test {
     public void setUp() {
 
         //Hedless режим
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--headless");
+        driver = new ChromeDriver();
         logger.info("Driver installed");
     }
 
