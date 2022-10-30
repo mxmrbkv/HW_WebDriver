@@ -24,8 +24,12 @@ public class Gogoduck_Test {
     public void setUp() {
 
         //Hedless режим
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--window-size=1920,1200");
         driver = new ChromeDriver();
         logger.info("Driver installed");
     }
