@@ -48,6 +48,7 @@ public class Gogoduck_Test {
         logger.info("DuckDuckGo open");
 
         //  В поисковую строку ввести ОТУС
+
         WebElement search = driver.findElement(By.cssSelector("#search_form_input_homepage"));
         search.clear();
         search.sendKeys("Отус");

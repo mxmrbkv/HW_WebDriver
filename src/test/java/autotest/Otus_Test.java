@@ -46,9 +46,9 @@ public class Otus_Test {
         String login = "mxmrbkv95@gmail.com";
         String password = "AutoTestOtus2022!";
         driver.findElement(By.cssSelector("button[data-modal-id=new-log-reg]")).click();
-        driver.findElement(By.xpath("//input[@type='text' and @placeholder='Электронная почта']")).sendKeys(login);
-        driver.findElement(By.xpath("//input[@placeholder='Введите пароль']")).sendKeys(password);
-        driver.findElement(By.cssSelector("div.new-input-line_last:nth-child(5) > button:nth-child(1)")).submit();
+        driver.findElement(By.cssSelector("form[action*='login'] input[name='email']")).sendKeys(login);
+        driver.findElement(By.cssSelector("form[action*='login']  input[type='password']")).sendKeys(password);
+        driver.findElement(By.cssSelector("form[action*='login']  button[type='submit']")).submit();
         logger.info("Authorization was successful");
     }
 
