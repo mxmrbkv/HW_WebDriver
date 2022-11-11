@@ -12,6 +12,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.time.Duration;
+
 public class W3layouts_Test {
 
     private Logger logger = LogManager.getLogger(W3layouts_Test.class);
@@ -28,6 +30,7 @@ public class W3layouts_Test {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-fullscreen");
         driver = new ChromeDriver(chromeOptions);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         logger.info("Driver installed");
     }
 
@@ -48,7 +51,7 @@ public class W3layouts_Test {
         driver.findElement(By.xpath("//li[@data-id='id-1']")).click();
 
         // Проверить что картинка открылась в модальном окне
-        boolean value = driver.findElement(By.cssSelector("div.pp_hoverContainer")).isEnabled();
+        boolean valueModalPage = driver.findElement(By.cssSelector("div.pp_hoverContainer")).isDisplayed();
         logger.info("Image opened in model window");
     }
 }
