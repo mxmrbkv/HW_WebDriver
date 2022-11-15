@@ -41,7 +41,7 @@ public class Gogoduck_Test {
     }
 
     @Test
-    public void OpenDuckDuckGo() throws InterruptedException {
+    public void openDuckDuckGo() throws InterruptedException {
 
         // Перейти на duckduckgo.com
         driver.get("https://duckduckgo.com/");
