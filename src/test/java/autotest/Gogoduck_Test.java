@@ -30,7 +30,7 @@ public class Gogoduck_Test {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--window-size=1920,1200");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         logger.info("Driver installed");
     }
 
