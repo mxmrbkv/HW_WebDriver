@@ -8,6 +8,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -48,7 +50,9 @@ public class W3layouts_Test {
         logger.info("w3layouts open");
 
         // Нажать на любую картинку
-        driver.findElement(By.xpath("//li[@data-id='id-1']")).click();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.querySelector('li[data-id=id-1] .image-zoom').click();");
+//        driver.findElement(By.xpath("//li[@data-id='id-1']")).click();
 
         // Проверить что картинка открылась в модальном окне
         boolean valueModalPage = driver.findElement(By.cssSelector("div.pp_hoverContainer")).isDisplayed();
